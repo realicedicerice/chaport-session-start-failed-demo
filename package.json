@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "startServer": "static --port 6043 -a 0.0.0.0 .",
+    "startPuppeteer": "node puppeteer.js"
+  },
+  "dependencies": {
+    "node-static": "^0.7.11",
+    "puppeteer": "^15.4.0"
+  }
+}

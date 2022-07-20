@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<button onclick="window.chaport.toggle()" id="btn">toggle</button>
+</body>
+  <script>
+    const INIT_SCRIPT = `(function(w,d,v3){
+w.chaportConfig = {
+  appId : '629f45493485b852a2215156',
+  launcher: {
+    show: false
+  },
+  triggers: {
+    enabled: false
+  }
+};
+
+if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
+  `;
+    
+    const script = document.createElement('script');
+    
+    script.innerHTML = INIT_SCRIPT;
+    document.head.appendChild(script);
+    
+    let complete = false;
+    
+    window.chaport.on('ready', (data) => {
+      if (complete) return;
+      
+      complete = true;
+      
+      setTimeout(() => {
+            window.chaport.startSession({
+                id: 'bbbdf059-ccb4-4a12-8845-e9a998943f1e',
+                token: '4916961256c204497affdfbb219cd8f1ff4c8504'
+            }, () => {
+                window.chaport.setVisitorData(
+                    {"name":"test test1","custom":{"cloudId":"vs256","cloudName":"QuickResto","tariffName":"pro"}},
+                    '3d1e745a9d5ca978d67cbc15427db3a939627a5e'
+                )
+            })
+        }, 0);
+    })
+  </script>
+</html>
