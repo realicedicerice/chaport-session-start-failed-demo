@@ -26,8 +26,17 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
     
     script.innerHTML = INIT_SCRIPT;
     document.head.appendChild(script);
+
+    window.chaport.q('startSession', [{
+        id: 'bbbdf059-ccb4-4a12-8845-e9a998943f1e',
+        token: '4916961256c204497affdfbb219cd8f1ff4c8504'
+    }]);
+    window.chaport.q('setVisitorData', [
+        {"name":"test test1","custom":{"cloudId":"vs256","cloudName":"QuickResto","tariffName":"pro"}},
+        '3d1e745a9d5ca978d67cbc15427db3a939627a5e'
+    ]);
     
-    let complete = false;
+    /* let complete = false;
     
     window.chaport.on('ready', (data) => {
       if (complete) return;
@@ -45,6 +54,6 @@ if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push
                 )
             })
         }, 0);
-    })
+    }) */
   </script>
 </html>
